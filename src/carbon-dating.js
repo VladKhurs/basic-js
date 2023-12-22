@@ -36,7 +36,7 @@ function dateSample(sampleActivity) {
   if (ans > Math.floor(ans)) {
     ans = Math.floor(ans) + 1;
   }
-  return ans
+  return ans;
 }
 
 module.exports = {
