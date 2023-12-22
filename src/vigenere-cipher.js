@@ -1,46 +1,38 @@
 const { NotImplementedError } = require('../extensions/index.js');
 
 /**
- * Extract season from given date and expose the enemy scout!
- * 
- * @param {Date | FakeDate} date real or fake date
- * @returns {String} time of the year
+ * Implement class VigenereCipheringMachine that allows us to create
+ * direct and reverse ciphering machines according to task description
  * 
  * @example
  * 
- * getSeason(new Date(2020, 02, 31)) => 'spring'
+ * const directMachine = new VigenereCipheringMachine();
+ * 
+ * const reverseMachine = new VigenereCipheringMachine(false);
+ * 
+ * directMachine.encrypt('attack at dawn!', 'alphonse') => 'AEIHQX SX DLLU!'
+ * 
+ * directMachine.decrypt('AEIHQX SX DLLU!', 'alphonse') => 'ATTACK AT DAWN!'
+ * 
+ * reverseMachine.encrypt('attack at dawn!', 'alphonse') => '!ULLD XS XQHIEA'
+ * 
+ * reverseMachine.decrypt('AEIHQX SX DLLU!', 'alphonse') => '!NWAD TA KCATTA'
  * 
  */
-function getSeason(date) {
-  if(arguments[0] === undefined || typeof date !== 'date') {
-    throw new Error('Invalid date!');
+class VigenereCipheringMachine {
+  encrypt() {
+    if(arguments[0] === undefined || arguments[i] === undefined) {
+      throw new Error('Incorrect arguments!');
+    }
+    console.log(arguments[0])
   }
-
-  if(typeof date.getMonth !== 'function') {
-    return 'Unable to determine the time of year!'
-  }
-
-  if(date.getMonth() === 11 || date.getMonth() === 0 || date.getMonth() === 1) {
-    return 'winter'
-  }
-
-  if(date.getMonth() === 2 || date.getMonth() === 3 || date.getMonth() === 4) {
-    return 'spring'
-  }
-
-  if(date.getMonth() === 5 || date.getMonth() === 6 || date.getMonth() === 7) {
-    return 'summer'
-  }
-
-  if(date.getMonth() === 8 || date.getMonth() === 9 || date.getMonth() === 10) {
-    return 'autumn'
-  }
-
-  else {
-    return 'winter'
+  decrypt() {
+    if(arguments[0] === undefined || arguments[i] === undefined) {
+      throw new Error('Incorrect arguments!');
+    }
   }
 }
 
 module.exports = {
-  getSeason
+  VigenereCipheringMachine
 };
